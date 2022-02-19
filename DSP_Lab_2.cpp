@@ -18,11 +18,11 @@ void  Implications(int* a, int* b , int* c, const int n)
             c[i] = 1;
     }
 }
-void AND(int* a, int* b, int* c, const int n)
+void OR(int* a, int* b, int* c, const int n)
 {
     for (int i = 0; i < n; i++)
     {
-        if (a[i] == 1 && b[i] == 1)
+        if (a[i] == 1 || b[i] == 1)
         {
             c[i] = 1;
         }
@@ -43,10 +43,10 @@ int main()
     int Fn[n];
     Implications(p, q, pq, n);
     Implications(q, r, qr, n);
-    AND(pq, qr, Fn, n);
-    cout << "            (p -> q)&&(q -> r)" << endl;
+    OR(pq, qr, Fn, n);
+    cout << "            (p -> q)or(q -> r)" << endl;
     cout << "-----------------------------------------------------" << endl;
-    cout << "| p | q | r | q -> q | q -> r | (p -> q)&&(q -> r) |" << endl;
+    cout << "| p | q | r | q -> q | q -> r | (p -> q)or(q -> r) |" << endl;
     cout << "-----------------------------------------------------" << endl;
     for (int i = 0; i < n; i++)
     {
